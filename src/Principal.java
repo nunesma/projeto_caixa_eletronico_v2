@@ -16,17 +16,17 @@ public class Principal {
 
         var saque = leitor.nextDouble();
 
-        var motivo = "o saldo e insuficiente";
+        var motivo = " saldo insuficiente";
 
         if (saque <= saldo && saque <= 1000.00 && saque >= 10.00 && (saque%10) == 0) {
             System.out.println("Trasacao aprovada, voce pode sacar");
-        } else {
-            if (saque >= 1000.00 || saque < 10.00) {
-                motivo = "esta fora do limite maximo de R$ 1000,00 e minimo de R$ 10,00 reais";
-            } if ((saque%10) != 0) {
-                motivo = "temos apenas cedulas de R$ 10, R$ 20, R$ 50 e R$ 100 reais";
+        } else
+            {if (saque >= 1000.00 || saque <= 10.00) {
+                motivo = "Esta fora do limite maximo de R$ 1000,00 e minimo de R$ 10,00 reais";
+            } else if ((saque%10) != 0) {
+                motivo = "Temos apenas cedulas de R$ 10, R$ 20, R$ 50 e R$ 100 reais";
             }
-            System.out.println("Saque nao autorizado porque " + motivo);
+            System.out.println("Saque nao autorizado." + motivo);
         }
     }
 }
